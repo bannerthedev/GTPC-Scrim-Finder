@@ -1,12 +1,16 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+import os
+import dotenv
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---------- CONFIG: REPLACE THESE ----------
-TOKEN = "MTUyMzU1ODczNTExMTUyNDQzNQ.G8FEIa.5CFs9DvPMc1Hbt_tTFmfcP8QGMSnuAdjFaM4WI"
 GUILD_ID = 1273371437817790514       # Guild ID where command registers
 
-ROLE_SCRIM_PING = 1523559711767527644       # @Scrim Ping
+ROLE_SCRIM_PING = 1488321200584261642       # @Scrim Ping
 ROLE_SUB_PING   = 1523559741245358233       # @Sub Ping
 ROLE_REF_PING   = 1273382013730160730       # @Unofficial Referee Ping
 
@@ -312,4 +316,4 @@ async def on_ready():
     await bot.close()
 
 
-bot.run(TOKEN)
+bot.run(os.getenv("TOKEN"))
